@@ -1,0 +1,122 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f3f0e7;
+  color: #1e3427;
+}
+
+.eyebrow {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  z-index: 3;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #647c52;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  top: 4rem;
+  z-index: 3;
+  max-width: 12ch;
+  margin: 0;
+  transform: translateX(-50%);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 500;
+  line-height: 1.04;
+  text-align: center;
+}
+
+.visualBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 11rem;
+  z-index: 1;
+}
+
+.explicacion {
+  position: relative;
+  z-index: 2;
+  width: 50vw;
+  height: 20vh;
+  max-width: 32rem;
+  margin: 8px 0 0;
+  color: #425c47;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  max-width: 50vw;
+  height: 50vh;
+  margin: 50px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.adopcionSection {
+  position: relative;
+  overflow: hidden;
+  background: #f7f4ee;
+  padding: 4rem 1.5rem;
+}
+
+.adopcionVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(0.9);
+}
+
+.adopcionContent {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adopcionText {
+  margin: 0;
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-block: 2rem;
+  }
+
+  .copy {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .image {
+    align-self: center;
+  }
+}

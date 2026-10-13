@@ -1,85 +1,48 @@
-"use client"
+import Image from "next/image";
+import olivo from "../imagenes/olivo.jpg";
+import OlivosSection from "./OlivosSection";
+import styles from "./page.module.css";
 
-import { useState } from "react"
-import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu"
-
-export default function Page() {
-  const [active, setActive] = useState<string | null>(null)
-
+export default function Home() {
   return (
     <>
-      <main className="relative min-h-[900px] h-screen w-screen bg-[#17BEBB]">
-        <div className="relative h-full w-[1368px] overflow-hidden bg-[#2E2B2A]">
-          <img
-            src="/linescape.jfif"
-            alt=""
-            className="h-full w-full object-cover"
+      <main className={styles.hero}>
+        <p className={styles.eyebrow}>Tradición mediterránea</p>
+        <h1 className={styles.title}>Adopta un olivo</h1>
+
+        <div className={styles.visualBlock}>
+          <Image
+            src={olivo}
+            alt="Olivo maduro en un campo mediterráneo"
+            priority
+            className={styles.image}
           />
-        </div>
-        <div className="absolute top-8 left-1/2 -translate-x-1/2">
-          <Menu setActive={setActive}>
-            <MenuItem setActive={setActive} active={active} item="Products">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="#design">Design tools</HoveredLink>
-                <HoveredLink href="#analytics">Analytics</HoveredLink>
-                <HoveredLink href="#integrations">Integrations</HoveredLink>
-              </div>
-            </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Company">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="#about">About us</HoveredLink>
-                <HoveredLink href="#contact">Contact</HoveredLink>
-                <HoveredLink href="#careers">Careers</HoveredLink>
-              </div>
-            </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Resources">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="#guides">Guides</HoveredLink>
-                <HoveredLink href="#support">Support</HoveredLink>
-              </div>
-            </MenuItem>
-          </Menu>
+          <p className={styles.explicacion}>
+            Somos una empresa y nuestro objetivo es ofrecer la adopción de olivos para todas aquellas personas que lo deseen.
+          </p>
         </div>
       </main>
-      
-      <main className="min-h-[900px] h-screen w-screen bg-[#17BEBB]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
-      </main>
-      
-      <main className="min-h-[900px] h-screen w-screen bg-[#17BEBB]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
-      </main>
-      <section className="h-[600px] w-screen bg-[#CD5334]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
+
+      <section className={styles.adopcionSection}>
+        <video
+          className={styles.adopcionVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/videos/14506-257440791_medium.webm" type="video/webm" />
+          <source src="/videos/14506-257440791_medium.mp4" type="video/mp4" />
+        </video>
+
+        <div className={styles.adopcionContent}>
+          <p className={styles.adopcionText}>
+            Adoptas un olivo real de nuestro campo. Nosotros lo cuidamos todo el año y tú formas parte de su historia y cosecha.
+          </p>
+        </div>
       </section>
-      
-      <section className="h-[600px] w-screen bg-[#CD5334]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
-      </section>
-      <main className="min-h-[900px] h-screen w-screen bg-[#17BEBB]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
-      </main>
-      <section className="h-[600px] w-screen bg-[#CD5334]">
-        <div className="h-full w-[1368px] bg-[#050401]" />
-      </section>
-      <main className="min-h-[900px] h-screen w-screen bg-[#17BEBB]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
-      </main>
-      <section className="h-[600px] w-screen bg-[#CD5334]">
-        <div className="h-full w-[1368px] bg-[#FC5130]" />
-      </section>
-      <main className="min-h-[900px] h-screen w-screen bg-[#17BEBB]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
-      </main>
-      <section className="h-[600px] w-screen bg-[#CD5334]">
-        <div className="h-full w-[1368px] bg-[#30BCED]" />
-      </section>
-      <main className="min-h-[900px] h-screen w-screen bg-[#17BEBB]">
-        <div className="h-full w-[1368px] bg-[#2E2B2A]" />
-      </main>
-      <section className="h-[600px] w-screen bg-[#CD5334]">
-        <div className="h-full w-[1368px] bg-[#FFFAFF]" />
-      </section>
+
+      <OlivosSection />
     </>
-  )
+  );
 }
